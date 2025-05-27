@@ -36,7 +36,7 @@ fun SelecLocationMap(
 
     val markerState = rememberMarkerState(position = initialPosition)
 
-    Box(Modifier.fillMaxWidth().padding(top = 16.dp).height(130.dp)) {
+    Box(Modifier.fillMaxWidth().padding(top = 16.dp).height(230.dp)) {
         GoogleMap(
             modifier = Modifier.fillMaxSize(),
             cameraPositionState = cameraPositionState,

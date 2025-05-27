@@ -1,8 +1,10 @@
 package com.pdmcourse.spotlyfe.ui.screens.AddPlace
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.foundation.text.input.rememberTextFieldState
@@ -72,19 +74,25 @@ import kotlinx.coroutines.launch
             ) },
             floatingActionButton = { CustomFloatingButton(onClick = {})}
         ) { innerPadding ->
-            Column(modifier = Modifier.padding(innerPadding)) {
+            Column(modifier = Modifier.padding(innerPadding).padding(16.dp)) {
 
                 TextField(
                     value = name,
                     onValueChange = { name = it },
-                    label = { Text("Label") }
+                    label = { Text("name") },
+                    modifier = Modifier.fillMaxWidth()
                 )
+
+                Spacer(modifier = Modifier.height(16.dp))
 
                 TextField(
                     value = remark,
                     onValueChange = { remark = it },
-                    label = { Text("Label") }
+                    label = { Text("remark") },
+                    modifier = Modifier.fillMaxWidth()
                 )
+
+
 
                 SelecLocationMap(onLocationChanged = {
                     marker.position = it
