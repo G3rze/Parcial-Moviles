@@ -21,6 +21,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHost
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.google.android.gms.maps.model.CameraPosition
@@ -43,14 +44,12 @@ import kotlinx.coroutines.launch
 
 
 @Composable
-    fun SavedPlacesScreen(viewModel: AddPlaceViewModel = viewModel(factory = AddPlaceViewModel.Factory)) {
+    fun AddPlaceScreen(navController: NavHostController,viewModel: AddPlaceViewModel = viewModel(factory = AddPlaceViewModel.Factory)) {
 
         var name by remember { viewModel.name }
         var remark by remember { viewModel.remark }
 
         var marker = rememberMarkerState(position = LatLng(13.679024407659101,-89.2357878993471))
-
-        val navController = rememberNavController()
 
         val coroutineScope = rememberCoroutineScope()
 
